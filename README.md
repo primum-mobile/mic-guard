@@ -2,26 +2,12 @@
 
 **Stop Bluetooth speakers and headsets from hijacking your microphone on macOS.**
 
-Connect a Bluetooth speaker and macOS quietly makes it your microphone. Your
-dictation, voice-coding tool or call suddenly listens through a tinny speakerphone
-mic across the room — and the speaker's playback drops to low-quality call audio
-while it's in use.
-
-macOS has no setting to say "never use this device as an input". mic-guard adds
-one: a tiny background agent that switches the input straight back to your real
-microphone the moment a Bluetooth device takes over.
-
-Made for people who talk to their computer all day: dictation, voice coding,
-speech-to-text, podcasting, calls.
-
-```
-2026-11-26T18:20:41Z magic animal -> MacBook Air Microphone
-```
+This scripts prevents mac OS from automatically making Bluetooth speakers your microphone input. 
 
 ## How it works
 
-- Listens for CoreAudio "default input changed" and "devices changed" events —
-  no polling, zero CPU while idle.
+- Listens for CoreAudio "default input changed" and "devices changed" events
+  (no polling, zero CPU while idle)
 - If the new default input is a Bluetooth device, it sets the default input back
   to your preferred mic (or the built-in one).
 - Never opens or records from any microphone, never touches the network, runs as
